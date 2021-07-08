@@ -27,8 +27,6 @@ const createContext = (request: FastifyRequest, logger: P.Logger) => {
     userId,
     properties: Object.assign({}, rest, properties),
   };
-  logger.info(`Context is ${Object.keys(context).join(',')}`);
-
   // Clean undefined properties
   for (let key in context) {
     // @ts-ignore
@@ -37,7 +35,6 @@ const createContext = (request: FastifyRequest, logger: P.Logger) => {
       delete context[key];
     }
   }
-  logger.info(`Context is ${Object.keys(context).join(',')}`);
   return context;
 };
 

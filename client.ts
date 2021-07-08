@@ -81,7 +81,6 @@ export default class Client extends EventEmitter {
 
   getEnabledToggles(context: Context | undefined) {
     const definitions = getFeatureToggleDefinitions() || [];
-    this.logger.info(`Got ${definitions.length} definitions`);
     return definitions
       .filter((d) => isEnabled(d.name, context))
       .map((d) => ({
@@ -92,8 +91,6 @@ export default class Client extends EventEmitter {
   }
 
   getDefinedToggles(toggleNames: string[], context: Context | undefined) {
-    this.logger.info(`Got definitions ${toggleNames.join(',')}`);
-
     return toggleNames.map((name) => {
       const enabled = isEnabled(name, context);
       this.metrics.count(name, enabled);
