@@ -19,7 +19,7 @@
   },
   "dependencies": {
     "abstract-logger": "^0.2.5",
-    "fastify": "^3.18.1",
+    "fastify": "^3.29.4",
     "fastify-auth": "^1.1.0",
     "fastify-cors": "^6.0.1",
     "unleash-client": "^3.9.0"
